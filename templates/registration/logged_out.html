@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>StarSocial</title>
+{% endblock title %}
+
+{% block content %}
+    <div align="center"><br><br>
+        <h1>Thanks. You are now logged out</h1>
+        <a class="text-info" href="{% url 'accounts:login' %}">Click here to log in again</a>
+    </div>
+{% endblock content %}

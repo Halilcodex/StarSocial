@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Home - StarSocial</title>
+{% endblock title %}
+
+{% block content %}
+    <div align="center"><br><br>
+        <h1>Welcome to Star Social!!!</h1>
+        <p>Your one stop hub for all information regarding the stars and the planets</p>
+        {% if user.is_authenticated %}
+            <h4><a class="text-info" href="{% url 'posts:user_posts' username=user.username %}">@{{ user.username }}</a></h4>
+            <p>You can create or join groups, make posts and see all other post from other groups</p>
+            <small>Have Fun!!!</small>
+        {% else %}
+            <a href="{% url 'accounts:signup' %}" class="text-info">Sign Up to get Started</a><br>
+            <span>Already a member? <a href-"{% url 'accounts:login' %}" class="text-info">Login</a></span>
+        {% endif %}
+
+    </div>
+{% endblock content %}

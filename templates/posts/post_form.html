@@ -1,0 +1,21 @@
+{% extends 'posts/posts_base.html' %}
+{% load bootstrap4 %}
+
+{% block post_content %}
+    <div class="col-2"><p></p></div>
+    <div class="col-8">
+        <div align="center"><br><br>
+        {% if user.is_authenticated %}
+            <h5>New Post</h5><hr>
+            <form method="POST" action="{% url 'posts:post_create' %}">
+            {% csrf_token %}
+                {% bootstrap_form form%}
+                <input type="submit" class="btn btn-info btn-block" value="Create">
+            </form>
+        {% else %}
+            <h3>Access Denied</h3>
+        {% endif %}
+        </div>
+    </div>
+    <div class="col-2"><p></p></div>
+{% endblock post_content %}

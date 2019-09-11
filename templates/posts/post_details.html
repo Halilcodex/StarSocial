@@ -1,0 +1,12 @@
+{% extends 'posts/posts_base.html' %}
+
+{% block prepost %}
+    <div class="col-12"><br><br>
+        <h3>{{ post.post_text|linebreaksbr }}</h1><hr class="text-info bg-light">
+        <small>Posted by: {{ post.user }} | On: {{ post.post_create_date }} <strong> {{ post.group }}</strong>
+            {% if user.is_authenticated and post.user == user %}
+                <a class="btn btn-danger btn-sm" href="{% url 'posts:post_delete' pk=post.pk %}"><i class="fas fa-trash"></i></a>
+            {% endif %}
+        </small>
+    </div>
+{% endblock prepost %}

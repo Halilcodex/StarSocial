@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}
+    <title>Log In - StarSocial</title>
+{% endblock title %}
+
+{% block content %}
+    <div align="center"><br><br>
+        <h1 class="text-center">Log In Here</h1>
+    </div>
+    <form method="POST">
+    {% csrf_token %}
+        {% bootstrap_form form%}
+        <input type="submit" class="btn btn-block btn-info" value="Log In">
+    </form>
+{% endblock content %}

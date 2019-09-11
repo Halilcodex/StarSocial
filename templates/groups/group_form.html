@@ -1,0 +1,23 @@
+{% extends 'groups/groups_base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}
+    <title>Groups - StarSocial</title>
+{% endblock title %}
+
+{% block group_content %}
+<div class='col-12'>
+    <div align="center"><br>
+    {% if user.is_authenticated %}
+        <h3>Create A Group</h3><hr>
+        <form method="POST" action="{% url 'groups:group_create' %}">
+            {% csrf_token %}
+            {% bootstrap_form form%}
+            <input type="submit" class="btn btn-block btn-info" value="Create">
+        </form>
+    {% else %}
+        <h3>Access Denied</h3>
+    {% endif %}
+    </div>
+</div>
+{% endblock group_content %}
