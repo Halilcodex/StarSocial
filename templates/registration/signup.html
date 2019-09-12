@@ -7,13 +7,13 @@
 
 {% block content %}
         <br>
-        <h1 class="text-center">Sign Up</h1><hr>
+        <h1 class="text-center">Sign Up</h1><hr class="bg-light text-info">
         {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+            <div align="center" class="alert alert-success {{ message.tags }} alert-dismissible fade show" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
-                {{ message }}
+                {{ message }} <a href="{% url 'accounts:login' %}" class="alert-link text-info">Click to Login</a>
             </div>
         {% endfor %}
         <form method="POST">

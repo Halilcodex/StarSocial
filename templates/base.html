@@ -33,9 +33,9 @@
                         <a class="nav-item nav-link text-info" href="{% url 'groups:group_create' %}">Create Group</a>
                         <a class="nav-item nav-link text-info" href="{% url 'accounts:logout' %}">Logout</a>
                     {% else %}
-                        <a class="nav-item nav-link" href="{% url 'groups:group_list' %}">Groups</a>
-                        <a class="nav-item nav-link" href="{% url 'accounts:login' %}">Log In</a>
-                        <a class="nav-item nav-link" href="{% url 'accounts:signup' %}">Sign Up</a>
+                        <a class="nav-item nav-link text-info" href="{% url 'groups:group_list' %}">Groups</a>
+                        <a class="nav-item nav-link text-info" href="{% url 'accounts:login' %}">Log In</a>
+                        <a class="nav-item nav-link text-info" href="{% url 'accounts:signup' %}">Sign Up</a>
                     {% endif %}
                 </div>
             </div>
