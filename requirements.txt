@@ -16,3 +16,4 @@ six==1.12.0
 soupsieve==1.9.3
 sqlparse==0.3.0
 text-unidecode==1.2
+whitenoise==4.1.3
